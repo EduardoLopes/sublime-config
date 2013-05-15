@@ -60,7 +60,13 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+a:-webkit-any-link {
+    text-decoration: none;
+}
 
+.container{
+    margin: 0 auto;
+}
 
 
 
