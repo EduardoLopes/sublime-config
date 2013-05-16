@@ -33,9 +33,12 @@
                      <label class="checkbox">
                         <input type="checkbox" data-name="line_numbers" data-prop="true"/> Set to false to disable scrolling past the end of the buffer.
                     </label>
-                    <select>
+                    <select data-name="font_options">
+                        <option value="none"> -- </option>
                         <option value="no_bold"> No bold</option>
                         <option value="no_italic"> No italic</option>
+                        <option value="no_antialias"> no_antialias</option>
+                        <option value="gray_antialias"> gray_antialias</option>     
                     </select>
                 </fieldset>
             </form>
@@ -52,6 +55,8 @@
                     <select>
                         <option value="no_bold"> No bold</option>
                         <option value="no_italic"> No italic</option>
+                        <option value="no_antialias"> no_antialias</option>
+                        <option value="gray_antialias"> gray_antialias</option>                        
                     </select>
                 </fieldset>
             </form>

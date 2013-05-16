@@ -26,11 +26,22 @@ c = new Config();
 
 $( "input[type='checkbox']" ).change(function(){
     var data = $(this).data();
-    
+
     if($(this).prop('checked') == true){
         c.setConfig(data.name, data.prop);
     } else {
         c.removeConfig(data.name);
     };
+    console.log(c.getJson());
+});
+
+$("select").change(function(){
+    var data = $(this).data();
+    var value = $("option:selected", this).attr('selected', true).val();
+    if(value == 'none'){
+        c.removeConfig(data.name);
+    } else {
+        c.setConfig(data.name, value);    
+    }
     console.log(c.getJson());
 });
