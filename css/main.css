@@ -74,6 +74,10 @@ a:-webkit-any-link {
     height: 200px;
 }
 
+.input-append{
+    margin-left: 0;
+}
+
 
 
 
