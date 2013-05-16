@@ -26,9 +26,9 @@
                 <div class="span12">
                     <form class="form-horizontal">
                         <div class="control-group">
-                             <label class="control-label" for="inputEmail">Color Scheme</label>
+                             <label class="control-label" for="color_scheme">Color Scheme</label>
                             <div class="controls">
-                            <select data-name="color_scheme">
+                            <select data-name="color_scheme" id="color_scheme">
                                 <option value="none"> Default </option>
                                 <option value="Packages/Color Scheme - Default/All Hallow's Eve.tmTheme"> All Hallow's Eve </option>
                                 <option value="Packages/Color Scheme - Default/Amy.tmTheme"> Amy </option>
@@ -55,9 +55,9 @@
                             </div>
                         </div>
                         <div class="control-group">
-                             <label class="control-label" for="inputEmail">Font</label>
+                             <label class="control-label" for="font_face">Font</label>
                             <div class="controls">
-                                <select data-name="font_face">
+                                <select data-name="font_face" id="font_face">
                                     <option value="none">Default</option>
                                     <option value="Monospace">Monospace</option>
                                     <option value="Ubuntu Mono">Ubuntu Mono</option>
@@ -65,10 +65,10 @@
                             </div>
                         </div>
                         <div class="control-group">
-                             <label class="control-label" for="inputEmail">Font Size</label>
+                             <label class="control-label" for="font_size">Font Size</label>
                             <div class="controls">
                                 <div class="input-append">
-                                    <input class="span2" type="number" min="1" mas="50" step="0.1" data-name="font-size">
+                                    <input class="span2" id="font_size" type="number" min="1" mas="50" step="0.1" data-name="font_size">
                                     <button class="btn default" type="button">Default</button>
                                 </div>
                             </div>
