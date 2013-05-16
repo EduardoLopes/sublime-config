@@ -24,6 +24,10 @@ c = new Config();
 
 //console.log(c.getJson());
 
+function addToTextArea(){
+    $(".result").text(c.getJson());
+}
+
 $( "input[type='checkbox']" ).change(function(){
     var data = $(this).data();
 
@@ -32,16 +36,16 @@ $( "input[type='checkbox']" ).change(function(){
     } else {
         c.removeConfig(data.name);
     };
-    console.log(c.getJson());
+    addToTextArea();
 });
 
 $("select").change(function(){
     var data = $(this).data();
-    var value = $("option:selected", this).attr('selected', true).val();
+    var value = $("option:selected", this).val();
     if(value == 'none'){
         c.removeConfig(data.name);
     } else {
         c.setConfig(data.name, value);    
     }
-    console.log(c.getJson());
+    addToTextArea();
 });

@@ -52,7 +52,7 @@
                      <label class="checkbox">
                         <input type="checkbox" data-name="font_size" data-prop="10"/> Set to false to disable scrolling past the end of the buffer.
                     </label>
-                    <select>
+                    <select data-name="font_options">
                         <option value="no_bold"> No bold</option>
                         <option value="no_italic"> No italic</option>
                         <option value="no_antialias"> no_antialias</option>
@@ -61,7 +61,7 @@
                 </fieldset>
             </form>
         </div>
-                <div class="span4">
+        <div class="span4">
             <form>
                 <fieldset>
                      <legend>Margin</legend>
@@ -70,7 +70,7 @@
                      <label class="checkbox">
                         <input type="checkbox" /> Set to false to disable scrolling past the end of the buffer.
                     </label>
-                    <select>
+                    <select data-name="font_options">
                         <option value="no_bold"> No bold</option>
                         <option value="no_italic"> No italic</option>
                     </select>
@@ -78,6 +78,11 @@
             </form>
         </div>
     </div>
+    <div class="row">
+        <div class="span12">
+            <textarea class="result"></textarea>
+        </div>
+    </div>            
 </div>
 
 
