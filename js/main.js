@@ -21,11 +21,16 @@ Config.prototype.getJson = function() {
 };
 
 c = new Config();
-c.setConfig('teste1', true);
-c.setConfig('teste2', 10);
-c.setConfig('teste3', '3');
-c.setConfig('teste4', '4');
-c.setConfig('teste5', '5');
-c.setConfig('teste6', '6');
 
 //console.log(c.getJson());
+
+$( "input[type='checkbox']" ).change(function(){
+    var data = $(this).data();
+    
+    if($(this).prop('checked') == true){
+        c.setConfig(data.name, data.prop);
+    } else {
+        c.removeConfig(data.name);
+    };
+    console.log(c.getJson());
+});
