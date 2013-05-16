@@ -62,3 +62,11 @@ $("select").change(function(){
     }
     addToTextArea();
 });
+
+$('button.default').on('click', function(){
+    var btn = $(this).prev();
+    btn.val("");
+    var data = btn.data();
+    c.removeConfig(data.name);
+    addToTextArea();
+});
