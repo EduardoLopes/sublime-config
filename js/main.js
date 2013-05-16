@@ -1,6 +1,6 @@
 function Config(){
-    this.config = {};
-    this.config.font_options = [];
+    this.config = {};   
+    this.config.font_options = [];     
 }
 
 Config.prototype.setConfig = function(what, arg) {
@@ -40,7 +40,7 @@ function addToTextArea(){
 
 $( "input[type='checkbox']" ).change(function(){
     var data = $(this).data();
-    var value = this.value;
+    var value = this.value;   
 
     if(data.name == "font_options" && $(this).prop('checked') == true) {
         c.setFontOptions(value);
@@ -53,7 +53,6 @@ $( "input[type='checkbox']" ).change(function(){
         } else {
             c.removeConfig(data.name);
         };
-
     }
 
     addToTextArea();

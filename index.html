@@ -42,6 +42,7 @@
                                 <option value="Packages/Color Scheme - Default/Mac Classic.tmTheme"> Mac Classic </option>
                                 <option value="Packages/Color Scheme - Default/MagicWB (Amiga).tmTheme"> MagicWB (Amiga) </option>
                                 <option value="Packages/Color Scheme - Default/Monokai Bright.tmTheme"> Monokai Bright </option>
+                                <option value="Packages/Color Scheme - Default/Monokai.tmTheme"> Monokai </option>
                                 <option value="Packages/Color Scheme - Default/Pastels on Dark.tmTheme"> Pastels on Dark </option>
                                 <option value="Packages/Color Scheme - Default/Slush & Poppies.tmTheme"> Slush & Poppies </option>
                                 <option value="Packages/Color Scheme - Default/Solarized (Dark).tmTheme"> Solarized (Dark) </option>
@@ -76,9 +77,41 @@
                         <div class="control-group">
                             <label class="control-label" for="font_options">Font Options</label>
                             <div class="controls">
-                                    <input type="checkbox" value="no_bold" data-name="font_options" /> No Bold                                
-                                    <input type="checkbox" value="no_italic" data-name="font_options" /> No Italic                                
-                                    <input type="checkbox" value="no_antialias" data-name="font_options" /> No Antialias
+                                <div id="row">                                    
+                                    <div class="span3">
+                                        <label for="bold">
+                                            <input id="bold" type="checkbox" value="bold" data-name="font_options" /> Bold
+                                        </label>
+                                        <label for="italic">
+                                            <input id="italic" type="checkbox" value="italic" data-name="font_options" /> No Italic                                
+                                        </label>                                    
+                                        <label for="gray_antialias">
+                                            <input id="gray_antialias" type="checkbox" value="gray_antialias" data-name="font_options" /> Gray Antialias
+                                        </label>
+                                    </div>
+                                    <div class="span3">
+                                        <label for="no_bold">
+                                            <input id="no_bold" type="checkbox" value="no_bold" data-name="font_options" /> No Bold
+                                        </label>
+                                        <label for="no_italic">
+                                            <input id="no_italic" type="checkbox" value="no_italic" data-name="font_options" /> No Italic                                
+                                        </label>
+                                        <label for="no_antialias">
+                                            <input id="no_antialias" type="checkbox" value="no_antialias" data-name="font_options" /> No Antialias
+                                        </label>
+                                    </div>
+                                     <div class="span3">                          
+                                        <label for="subpixel_antialias">
+                                            <input id="subpixel_antialias" type="checkbox" value="subpixel_antialias" data-name="font_options" /> Subpixel Antialias (OS X only)
+                                        </label>
+                                        <label for="no_round">
+                                            <input id="no_round" type="checkbox" value="no_round" data-name="font_options" /> No Round (OS X only)
+                                        </label>
+                                        <label for="directwrite">
+                                            <input id="directwrite" type="checkbox" value="directwrite" data-name="font_options" /> Directwrite (Windows only)  
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>
