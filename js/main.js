@@ -39,6 +39,19 @@ $( "input[type='checkbox']" ).change(function(){
     addToTextArea();
 });
 
+$( " input[type='number']" ).change(function(){
+    var data = $(this).data();
+    var value = this.value;
+    if(data.name == "scroll_speed") value = parseFloat(value).toFixed(1);
+
+    if(value == "" || value == "NaN")
+        c.removeConfig(data.name);
+    else
+        c.setConfig(data.name, value);
+
+    addToTextArea();
+});
+
 $("select").change(function(){
     var data = $(this).data();
     var value = $("option:selected", this).val();
