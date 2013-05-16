@@ -21,81 +21,49 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
     
-<div class="container">
-    <div class="row">
-
-        <div class="span4">
-            <form>
-                <fieldset>
-                     <legend>Legend</legend>
-                     <label>Label name</label>                     
-                     <input type="text" />                     
-                     <label class="checkbox">
-                        <input type="checkbox" data-name="line_numbers" data-prop="true"/> Set to false to disable scrolling past the end of the buffer.
-                    </label>
-                    <select data-name="font_options">
-                        <option value="none"> -- </option>
-                        <option value="no_bold"> No bold </option>
-                        <option value="no_italic"> No italic </option>
-                        <option value="no_antialias"> no antialias </option>
-                        <option value="gray_antialias"> gray antialias </option>
-                    </select>
-                    <div class="input-append">
-                        <input class="span2" type="number" min="0.0" max="1.0" step="0.1" data-name="scroll_speed"></input>
-                        <button class="btn default" type="button">Default</button>
-                    </div>
-                    <div class="input-append">
-                        <input class="span2" type="number" min="0" max="50" step="1" data-name="auto_complete_delay"></input>
-                        <button class="btn default" type="button">Default</button>
-                    </div>
-                </fieldset>
-            </form>
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <form class="form-horizontal">
+                        <div class="control-group">
+                             <label class="control-label" for="inputEmail">Color Scheme</label>
+                            <div class="controls">
+                            <select data-name="color_scheme">
+                                <option value="none"> Default </option>
+                                <option value="Packages/Color Scheme - Default/All Hallow's Eve.tmTheme"> All Hallow's Eve </option>
+                                <option value="Packages/Color Scheme - Default/Amy.tmTheme"> Amy </option>
+                                <option value="Packages/Color Scheme - Default/Blackboard.tmTheme"> Blackboard </option>
+                                <option value="Packages/Color Scheme - Default/Cobalt.tmTheme"> Cobalt </option>
+                                <option value="Packages/Color Scheme - Default/Dawn.tmTheme"> Dawn </option>
+                                <option value="Packages/Color Scheme - Default/Eiffel.tmTheme"> Eiffel </option>
+                                <option value="Packages/Color Scheme - Default/Espresso Libre.tmTheme"> Espresso Libre </option>
+                                <option value="Packages/Color Scheme - Default/IDLE.tmTheme"> IDLE </option>
+                                <option value="Packages/Color Scheme - Default/LAZY.tmTheme"> LAZY </option>
+                                <option value="Packages/Color Scheme - Default/Mac Classic.tmTheme"> Mac Classic </option>
+                                <option value="Packages/Color Scheme - Default/MagicWB (Amiga).tmTheme"> MagicWB (Amiga) </option>
+                                <option value="Packages/Color Scheme - Default/Monokai Bright.tmTheme"> Monokai Bright </option>
+                                <option value="Packages/Color Scheme - Default/Pastels on Dark.tmTheme"> Pastels on Dark </option>
+                                <option value="Packages/Color Scheme - Default/Slush & Poppies.tmTheme"> Slush & Poppies </option>
+                                <option value="Packages/Color Scheme - Default/Solarized (Dark).tmTheme"> Solarized (Dark) </option>
+                                <option value="Packages/Color Scheme - Default/Solarized (Light).tmThem"> Solarized (Light) </option>
+                                <option value="Packages/Color Scheme - Default/SpaceCadet.tmTheme"> SpaceCadet </option>
+                                <option value="Packages/Color Scheme - Default/Sunburst.tmTheme"> Sunburst </option>
+                                <option value="Packages/Color Scheme - Default/Twilight.tmTheme"> Twilight </option>
+                                <option value="Packages/Color Scheme - Default/Zenburnesque.tmTheme"> Zenburnesque </option>
+                                <option value="Packages/Color Scheme - Default/iPlastic.tmTheme"> iPlastic </option>
+                            </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <textarea class="result"></textarea>
+                </div>
+            </div>            
         </div>
-        <div class="span4">
-            <form>
-                <fieldset>
-                     <legend>Text</legend>
-                     <label>Label name</label>                     
-                     <input type="text" />                     
-                     <label class="checkbox">
-                        <input type="checkbox" data-name="font_size" data-prop="10"/> Set to false to disable scrolling past the end of the buffer.
-                    </label>
-                    <select data-name="font_options3">
-                        <option value="none"> -- </option>
-                        <option value="no_bold"> No bold</option>
-                        <option value="no_italic"> No italic</option>
-                        <option value="no_antialias"> no_antialias</option>
-                        <option value="gray_antialias"> gray_antialias</option>                        
-                    </select>
-                </fieldset>
-            </form>
-        </div>
-        <div class="span4">
-            <form>
-                <fieldset>
-                     <legend>Margin</legend>
-                     <label>Label name</label>                     
-                     <input type="text" />                     
-                     <label class="checkbox">
-                        <input type="checkbox" /> Set to false to disable scrolling past the end of the buffer.
-                    </label>
-                    <select data-name="font_options2">
-                        <option value="none"> -- </option>
-                        <option value="no_bold"> No bold</option>
-                        <option value="no_italic"> No italic</option>
-                    </select>
-                </fieldset>
-            </form>
-        </div>
-    </div>
-    <div class="row">
-        <div class="span12">
-            <textarea class="result"></textarea>
-        </div>
-    </div>            
-</div>
-
-
+        
         <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
