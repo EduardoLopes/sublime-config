@@ -37,9 +37,6 @@ Config.prototype.getJson = function() {
 
 c = new Config();
 
-
-//console.log(c.getJson());
-
 function addToTextArea(){
     $(".result").text(c.getJson());
 }
@@ -64,7 +61,7 @@ $( "input[type='checkbox']" ).change(function(){
     addToTextArea();
 });
 
-$( " input[type='number']" ).change(function(){
+$( " input[type='number'] " ).change(function(){
     var data = $(this).data();
     var value = this.value;
     if(data.name == "scroll_speed") value = parseFloat(value).toFixed(1);
@@ -88,10 +85,33 @@ $("select").change(function(){
     addToTextArea();
 });
 
+
 $('button.default').on('click', function(){
     var btn = $(this).prev();
     btn.val("");
     var data = btn.data();
     c.removeConfig(data.name);
+    addToTextArea();
+});
+
+$('.btn-group').on('click', function(event){
+    event.preventDefault();
+    var data = $(this).data();
+    var value = $(event.toElement).data();
+    
+    if($('.btn-group').children('.btn').hasClass('active')){
+        $('.btn-group').children('.btn').removeClass('active');
+        $(event.toElement).addClass('active');
+    } else {
+        $(event.toElement).addClass('active');
+    }
+
+    console.log(value.prop);
+    if(value.prop == "default"){
+        c.removeConfig(data.name);    
+    } else {
+        c.setConfig(data.name, value.prop);    
+    }
+
     addToTextArea();
 });
