@@ -32,7 +32,7 @@ Config.prototype.removeConfig = function(what) {
 
 Config.prototype.getJson = function() {
     var json = JSON.stringify(c.getConfig(), null, '\t');
-    return json.replace(/\"(\d*.\d+|[\d+]|false|true)\"/,"$1");
+    return json.replace(/\"(\d*.\d+|[\d+]|false|true)\"/g,"$1");
 };
 
 c = new Config();
