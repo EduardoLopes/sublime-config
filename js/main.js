@@ -1,20 +1,25 @@
 function Config(){
-    this.config = {};   
-    this.config.font_options = [];     
+    this.config = {};     
 }
 
 Config.prototype.setConfig = function(what, arg) {
     this.config[what] = arg;
-    //console.log(this.config);
 };
 
-Config.prototype.setFontOptions = function(arg) {    
-        this.config.font_options.push(arg);
+Config.prototype.setFontOptions = function(arg) { 
+    if(this.config.font_options == undefined) {
+            this.config.font_options = [];
+    }
+
+    this.config.font_options.push(arg);
 };
 
 Config.prototype.removeFontOptions = function(arg) {    
     var index = this.config.font_options.indexOf(arg);
     this.config.font_options.splice(index, 1);
+    if(this.config.font_options.length == 0) {
+        delete this.config.font_options;
+    }
 };
 
 Config.prototype.getConfig = function(config) {
@@ -32,6 +37,7 @@ Config.prototype.getJson = function() {
 
 c = new Config();
 
+
 //console.log(c.getJson());
 
 function addToTextArea(){
@@ -40,7 +46,7 @@ function addToTextArea(){
 
 $( "input[type='checkbox']" ).change(function(){
     var data = $(this).data();
-    var value = this.value;   
+    var value = this.value;
 
     if(data.name == "font_options" && $(this).prop('checked') == true) {
         c.setFontOptions(value);
