@@ -99,14 +99,13 @@ $('.btn-group').on('click', function(event){
     var data = $(this).data();
     var value = $(event.toElement).data();
     
-    if($('.btn-group').children('.btn').hasClass('active')){
-        $('.btn-group').children('.btn').removeClass('active');
+    if($(this).children('.btn').hasClass('active')){
+        $(this).children('.btn').removeClass('active');
         $(event.toElement).addClass('active');
     } else {
         $(event.toElement).addClass('active');
     }
 
-    console.log(value.prop);
     if(value.prop == "default"){
         c.removeConfig(data.name);    
     } else {
