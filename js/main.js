@@ -1,24 +1,33 @@
 function Config(){
-    this.config = {};     
+    this.config = {};
+    this.configArray =  [
+                    'font_options',
+                    'rulers',
+                    'auto_complete_triggers',
+                    'folder_exclude_patterns',
+                    'file_exclude_patterns',
+                    'binary_file_patterns',
+                    'ignored_packages'
+                        ]
 }
 
 Config.prototype.setConfig = function(what, arg) {
     this.config[what] = arg;
 };
 
-Config.prototype.setFontOptions = function(arg) { 
-    if(this.config.font_options == undefined) {
-            this.config.font_options = [];
+Config.prototype.setArrayOptions = function(what, arg) { 
+    if(this.config[what] == undefined) {
+            this.config[what] = [];
     }
-
-    this.config.font_options.push(arg);
+    console.log(this.config[what]);
+    this.config[what].push(arg);
 };
 
-Config.prototype.removeFontOptions = function(arg) {    
-    var index = this.config.font_options.indexOf(arg);
-    this.config.font_options.splice(index, 1);
-    if(this.config.font_options.length == 0) {
-        delete this.config.font_options;
+Config.prototype.removeArrayOptions = function(what, arg) {    
+    var index = this.config[what].indexOf(arg);
+    this.config[what].splice(index, 1);
+    if(this.config[what].length == 0) {
+        delete this.config[what];
     }
 };
 
@@ -45,10 +54,10 @@ $( "input[type='checkbox']" ).change(function(){
     var data = $(this).data();
     var value = this.value;
 
-    if(data.name == "font_options" && $(this).prop('checked') == true) {
-        c.setFontOptions(value);
-    } else if (data.name == "font_options" && $(this).prop('checked') == false){
-        c.removeFontOptions(value);
+    if(c.configArray.indexOf(data.name) > -1 && $(this).prop('checked') == true) {
+        c.setArrayOptions(data.name, value);
+    } else if (c.configArray.indexOf(data.name) > -1 && $(this).prop('checked') == false){
+        c.removeArrayOptions(data.name, value);
     } else {
 
         if($(this).prop('checked') == true){
