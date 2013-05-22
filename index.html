@@ -69,7 +69,7 @@
                              <label class="control-label" for="font_size">Font Size</label>
                             <div class="controls">
                                 <div class="input-append">
-                                    <input class="span2" id="font_size" type="number" min="1" max="50" step="0.1" data-name="font_size">
+                                    <input class="span2 onChange" id="font_size" type="number" min="1" max="50" step="0.1" data-name="font_size">
                                     <button class="btn default" type="button">Default</button>
                                 </div>
                             </div>
@@ -138,7 +138,7 @@
                              <label class="control-label" for="margin">Margin</label>
                             <div class="controls">
                                 <div class="input-append">
-                                    <input class="span2" id="margin" type="number" min="0" max="50" step="1" data-name="margin">
+                                    <input class="span2 onChange" id="margin" type="number" min="0" max="50" step="1" data-name="margin">
                                     <button class="btn default" type="button">Default</button>
                                 </div>
                             </div>
@@ -160,6 +160,20 @@
                                     <button class="btn" data-prop="true">True</button>
                                     <button class="btn" data-prop="false">False</button>
                                     <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="rulers">Rulers</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input id="rulers" class="span2" type="number" min="0" max="999" step="1" data-name="rulers">
+                                    <button class="btn addRule" type="button" data-name="rulers">Add</button>
+                                </div>
+                                <div class="rulers">
+                                    <div class="input-append">
+                                        <div class="row"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

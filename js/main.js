@@ -19,7 +19,6 @@ Config.prototype.setArrayOptions = function(what, arg) {
     if(this.config[what] == undefined) {
             this.config[what] = [];
     }
-    console.log(this.config[what]);
     this.config[what].push(arg);
 };
 
@@ -31,7 +30,7 @@ Config.prototype.removeArrayOptions = function(what, arg) {
     }
 };
 
-Config.prototype.getConfig = function(config) {
+Config.prototype.getConfig = function() {
     return this.config;
 };
 
@@ -70,7 +69,7 @@ $( "input[type='checkbox']" ).change(function(){
     addToTextArea();
 });
 
-$( " input[type='number'] " ).change(function(){
+$( " input[type='number'].onChange " ).change(function(){
     var data = $(this).data();
     var value = this.value;
     if(data.name == "scroll_speed") value = parseFloat(value).toFixed(1);
@@ -121,5 +120,26 @@ $('.btn-group').on('click', function(event){
         c.setConfig(data.name, value.prop);    
     }
 
+    addToTextArea();
+});
+
+$('.addRule').on('click', function(event){
+    event.preventDefault();
+    
+    var data = $(event.toElement).data();
+    var value = $('#rulers').val();
+    var html = '<div class="ruleContainer"><div class="text-with-btn">' + value + '</div><button class="btn ruler" type="button" data-name="rulers" data-prop="' + value + '"><i class="icon-remove"></i></button><div>';
+
+    c.setArrayOptions(data.name, value);
+    $('.rulers .input-append .row').append(html);
+    addToTextArea();
+});
+
+$(document).on('click', '.ruler', function(event){
+    $(this).parent().remove();
+    var data = $(this).data();
+    var value = data.prop.toString();
+    
+    c.removeArrayOptions(data.name, value);
     addToTextArea();
 });

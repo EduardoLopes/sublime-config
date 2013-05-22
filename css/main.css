@@ -78,8 +78,35 @@ a:-webkit-any-link {
     margin-left: 0;
 }
 
+.rulers{
+    margin: 5px 0;
+}
 
+.text-with-btn {
+    width: 26px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 0;
+    vertical-align: middle;
+    -webkit-border-bottom-left-radius: 4px;
+        -moz-border-radius-bottomleft: 4px;
+            border-bottom-left-radius: 4px;
+    -webkit-border-top-left-radius: 4px;
+        -moz-border-radius-topleft: 4px;
+            border-top-left-radius: 4px;
+    border: 1px solid #ccc;
+}
 
+.ruleContainer {
+    width: 75px;
+    float: left;
+    min-height: 1px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
 
 
 
