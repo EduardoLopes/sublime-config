@@ -128,11 +128,26 @@ $('.addRule').on('click', function(event){
     
     var data = $(event.toElement).data();
     var value = $('#rulers').val();
-    var html = '<div class="ruleContainer"><div class="text-with-btn">' + value + '</div><button class="btn ruler" type="button" data-name="rulers" data-prop="' + value + '"><i class="icon-remove"></i></button><div>';
+    
+    var textWidthBth = "<div class='text-with-btn'>" + value + "</div>";
+    var btn = "<button class='btn ruler' type='button' data-name='rulers' data-prop='" + value + "'><i class='icon-remove'></i></button>";
+    var html = "<div class='ruleContainer'> " + textWidthBth+btn + " <div>";
+            
+        if(value){
+            
+            if(c.getConfig()[data.name] != undefined && c.getConfig()[data.name].indexOf(value) != -1 || value == 0){
+                $('#rulers').addClass('invalid'); 
+            } else {
+                c.setArrayOptions(data.name, value);
+                $('.rulers .input-append .row').append(html);
+                $('#rulers, .text-with-btn').removeClass('invalid');    
+            }
 
-    c.setArrayOptions(data.name, value);
-    $('.rulers .input-append .row').append(html);
-    addToTextArea();
+        } else {
+            $('#rulers').addClass('invalid');
+        }
+
+   addToTextArea();
 });
 
 $(document).on('click', '.ruler', function(event){

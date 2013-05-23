@@ -82,6 +82,13 @@ a:-webkit-any-link {
     margin: 5px 0;
 }
 
+.input-append .invalid{
+    border-color: #e9322d;
+    -webkit-box-shadow: 0 0 6px #f8b9b7;
+    -moz-box-shadow: 0 0 6px #f8b9b7;
+    box-shadow: 0 0 6px #f8b9b7;
+}
+
 .text-with-btn {
     width: 26px;
     text-align: center;
