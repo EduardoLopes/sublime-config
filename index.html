@@ -26,7 +26,7 @@
                 <div class="span12">
                     <form class="form-horizontal">
                         <div class="control-group">
-                             <label class="control-label" for="color_scheme">Color Scheme</label>
+                            <label class="control-label" for="color_scheme">Color Scheme</label>
                             <div class="controls">
                             <select data-name="color_scheme" id="color_scheme">
                                 <option value="none"> Default </option>
@@ -56,7 +56,7 @@
                             </div>
                         </div>
                         <div class="control-group">
-                             <label class="control-label" for="font_face">Font</label>
+                            <label class="control-label" for="font_face">Font</label>
                             <div class="controls">
                                 <select data-name="font_face" id="font_face">
                                     <option value="none">Default</option>
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                         <div class="control-group">
-                             <label class="control-label" for="font_size">Font Size</label>
+                            <label class="control-label" for="font_size">Font Size</label>
                             <div class="controls">
                                 <div class="input-append">
                                     <input class="span2 onChange" id="font_size" type="number" min="1" max="50" step="0.1" data-name="font_size">
@@ -115,7 +115,7 @@
                             </div>
                         </div>
                         <div class="control-group">
-                             <label class="control-label" for="line_numbers">Line Numbers</label>
+                            <label class="control-label" for="line_numbers">Line Numbers</label>
                             <div class="controls">
                                 <div class="btn-group" data-name="line_numbers">
                                     <button class="btn" data-prop="true">True</button>
@@ -125,7 +125,7 @@
                             </div>
                         </div>
                         <div class="control-group">
-                             <label class="control-label" for="gutter">Gutter</label>
+                            <label class="control-label" for="gutter">Gutter</label>
                             <div class="controls">
                                 <div class="btn-group" data-name="gutter">
                                     <button class="btn" data-prop="true">True</button>
@@ -135,7 +135,7 @@
                             </div>
                         </div>
                         <div class="control-group">
-                             <label class="control-label" for="margin">Margin</label>
+                            <label class="control-label" for="margin">Margin</label>
                             <div class="controls">
                                 <div class="input-append">
                                     <input class="span2 onChange" id="margin" type="number" min="0" max="50" step="1" data-name="margin">
@@ -144,7 +144,7 @@
                             </div>
                         </div>
                         <div class="control-group">
-                             <label class="control-label" for="fold_buttons">Fold Buttons</label>
+                            <label class="control-label" for="fold_buttons">Fold Buttons</label>
                             <div class="controls">
                                 <div class="btn-group" data-name="fold_buttons">
                                     <button class="btn" data-prop="true">True</button>
@@ -154,7 +154,7 @@
                             </div>
                         </div>
                         <div class="control-group">
-                             <label class="control-label" for="fade_fold_buttons">Fade Fold Buttons</label>
+                            <label class="control-label" for="fade_fold_buttons">Fade Fold Buttons</label>
                             <div class="controls">
                                 <div class="btn-group" data-name="fade_fold_buttons">
                                     <button class="btn" data-prop="true">True</button>
@@ -174,6 +174,258 @@
                                     <div class="input-append">
                                         <div class="row"></div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="spell_check">Spell Check</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="spell_check">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="tab_size">Tab Size</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input class="span2 onChange" id="tab_size" type="number" min="1" max="50" step="1" data-name="tab_size">
+                                    <button class="btn default" type="button">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="translate_tabs_to_spaces">Spell Check</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="translate_tabs_to_spaces">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="use_tab_stops">Use Tab Stops</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="use_tab_stops">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="detect_indentation">Detect Indentation</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="detect_indentation">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="auto_indent">Auto Indent</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="auto_indent">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="smart_indent">Smart Indent</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="smart_indent">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="indent_to_bracket">Indent to Bracket</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="indent_to_bracket">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="trim_automatic_white_space">Trim Automatic White Space</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="trim_automatic_white_space">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="wrap_width">Wrap Width</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input class="span2 onChange" id="tab_size" type="number" min="0" max="999" step="1" data-name="wrap_width">
+                                    <button class="btn default" type="button">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="word_wrap">Word Wrap</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="word_wrap">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn" data-prop="auto">Auto</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="indent_subsequent_lines">Indent Subsequent Lines</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="indent_subsequent_lines">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="draw_centered">Draw Centered</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="draw_centered">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="auto_match_enabled">Auto Match Enabled</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="auto_match_enabled">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="dictionary">Dictionary</label>
+                            <div class="controls">
+                                <select data-name="dictionary" id="dictionary">
+                                    <option value="none">Default</option>
+                                    <option value="Packages/Language - English/en_US.dic">en_US</option>
+                                    <option value="Packages/Language - English/en_GB.dic">en_GB</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="draw_minimap_border">Draw Minimap Border</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="draw_minimap_border">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="highlight_line">Highlight Line</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="highlight_line">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="caret_style">Caret Style</label>
+                            <div class="controls">
+                                <select data-name="caret_style" id="caret_style">
+                                    <option value="none">Default</option>
+                                    <option value="smooth">Smooth</option>
+                                    <option value="phase">Phase</option>
+                                    <option value="blink">Blink</option>
+                                    <option value="wide">Wide</option>
+                                    <option value="solid">Solid</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="match_brackets">Match Brackets</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="match_brackets">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="match_brackets_content">Match Brackets Content</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="match_brackets_content">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="match_brackets_square">Match Brackets Square</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="match_brackets_square">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="match_brackets_braces">Match Brackets Braces</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="match_brackets_braces">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="match_brackets_angle">Match Brackets Angle</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="match_brackets_angle">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="match_tags">Match Tags</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="match_tags">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="match_selection">Match Selection</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="match_selection">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
                                 </div>
                             </div>
                         </div>
