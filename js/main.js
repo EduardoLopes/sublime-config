@@ -3,6 +3,7 @@ function Config(){
     this.configArray =  [
                     'font_options',
                     'rulers',
+                    'indent_guide_options',
                     'auto_complete_triggers',
                     'folder_exclude_patterns',
                     'file_exclude_patterns',
@@ -85,7 +86,7 @@ $( " input[type='number'].onChange " ).change(function(){
 $("select").change(function(){
     var data = $(this).data();
     var value = $("option:selected", this).val();
-    if(value == 'none'){
+    if(value == 'default'){
         c.removeConfig(data.name);
     } else {
         c.setConfig(data.name, value);    

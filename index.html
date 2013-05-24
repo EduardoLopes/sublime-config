@@ -29,7 +29,7 @@
                             <label class="control-label" for="color_scheme">Color Scheme</label>
                             <div class="controls">
                             <select data-name="color_scheme" id="color_scheme">
-                                <option value="none"> Default </option>
+                                <option value="default"> Default </option>
                                 <option value="Packages/Color Scheme - Default/All Hallow's Eve.tmTheme"> All Hallow's Eve </option>
                                 <option value="Packages/Color Scheme - Default/Amy.tmTheme"> Amy </option>
                                 <option value="Packages/Color Scheme - Default/Blackboard.tmTheme"> Blackboard </option>
@@ -59,7 +59,7 @@
                             <label class="control-label" for="font_face">Font</label>
                             <div class="controls">
                                 <select data-name="font_face" id="font_face">
-                                    <option value="none">Default</option>
+                                    <option value="default">Default</option>
                                     <option value="Monospace">Monospace</option>
                                     <option value="Ubuntu Mono">Ubuntu Mono</option>
                                 </select>
@@ -320,7 +320,7 @@
                             <label class="control-label" for="dictionary">Dictionary</label>
                             <div class="controls">
                                 <select data-name="dictionary" id="dictionary">
-                                    <option value="none">Default</option>
+                                    <option value="default">Default</option>
                                     <option value="Packages/Language - English/en_US.dic">en_US</option>
                                     <option value="Packages/Language - English/en_GB.dic">en_GB</option>
                                 </select>
@@ -350,7 +350,7 @@
                             <label class="control-label" for="caret_style">Caret Style</label>
                             <div class="controls">
                                 <select data-name="caret_style" id="caret_style">
-                                    <option value="none">Default</option>
+                                    <option value="default">Default</option>
                                     <option value="smooth">Smooth</option>
                                     <option value="phase">Phase</option>
                                     <option value="blink">Blink</option>
@@ -423,6 +423,256 @@
                             <label class="control-label" for="match_selection">Match Selection</label>
                             <div class="controls">
                                 <div class="btn-group" data-name="match_selection">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="line_padding_top">Line Padding Top</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input class="span2 onChange" id="line_padding_top" type="number" min="0" max="20" step="1" data-name="line_padding_top">
+                                    <button class="btn default" type="button">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="line_padding_botton">Line Padding Botton</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input class="span2 onChange" id="line_padding_botton" type="number" min="0" max="20" step="1" data-name="line_padding_botton">
+                                    <button class="btn default" type="button">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="scroll_past_end">Scroll Past End</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="scroll_past_end">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="move_to_limit_on_up_down">Move To Limit on Up Down</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="move_to_limit_on_up_down">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="draw_white_space">Draw White Space</label>
+                            <div class="controls">
+                                <select data-name="draw_white_space" id="draw_white_space">
+                                    <option value="default">Default</option>
+                                    <option value="none">None</option>
+                                    <option value="selection">Selection</option>
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="draw_indent_guides">Draw Indent Guides</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="draw_indent_guides">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="indent_guide_options">Font Options</label>
+                            <div class="controls">
+                                <div id="row">
+                                    <label for="draw_normal">
+                                        <input id="draw_normal" type="checkbox" value="draw_normal" data-name="indent_guide_options" /> Draw Normal
+                                    </label>
+                                    <label for="draw_active">
+                                        <input id="draw_active" type="checkbox" value="draw_active" data-name="indent_guide_options" /> Draw Active                                
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="trim_trailing_white_space_on_save">Trim Trailing White Space on Save</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="trim_trailing_white_space_on_save">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="ensure_newline_at_eof_on_save">Ensure Newline at EOF on Save</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="ensure_newline_at_eof_on_save">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="save_on_focus_lost">Save on Focus Lost</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="save_on_focus_lost">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="enable_hexadecimal_encoding">Enable Hexadecimal Encoding</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="enable_hexadecimal_encoding">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="default_line_ending">Default Line Ending</label>
+                            <div class="controls">
+                                <select data-name="default_line_ending" id="default_line_ending">
+                                    <option value="default">Default</option>
+                                    <option value="system">System</option>
+                                    <option value="Windows">Windows</option>
+                                    <option value="unix">Unix</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="tab_completion">Tab Completion</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="tab_completion">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="auto_complete">Auto Complete</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="auto_complete">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="auto_complete_size_limit">Auto Complete Size Limit</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input class="span2 onChange" id="auto_complete_size_limit" type="number" min="0" step="1" data-name="auto_complete_size_limit">
+                                    <button class="btn default" type="button">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="auto_complete_delay">Auto Complete Delay</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input class="span2 onChange" id="auto_complete_delay" type="number" min="0" step="1" data-name="auto_complete_delay">
+                                    <button class="btn default" type="button">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="auto_complete_commit_on_tab">Auto Complete Commit on Tab</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="auto_complete_commit_on_tab">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="auto_complete_with_fields">Auto Complete With Fields</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="auto_complete_with_fields">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="shift_tab_unindent">Shift Tab Unindent</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="shift_tab_unindent">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="copy_with_empty_selection">Copy With Empty Selection</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="copy_with_empty_selection">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="find_selected_text">Find Selected Text</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="find_selected_text">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="drag_text">Drag Text</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="drag_text">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="scroll_speed">Scroll Speed</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input class="span2 onChange" id="scroll_speed" type="number" min="0" step="0.1" data-name="scroll_speed">
+                                    <button class="btn default" type="button">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="tree_animation_enabled">Tree Animation Enabled</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="tree_animation_enabled">
+                                    <button class="btn" data-prop="true">True</button>
+                                    <button class="btn" data-prop="false">False</button>
+                                    <button class="btn active" data-prop="default">Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="highlight_modified_tabs">Highlight Modified Tabs</label>
+                            <div class="controls">
+                                <div class="btn-group" data-name="highlight_modified_tabs">
                                     <button class="btn" data-prop="true">True</button>
                                     <button class="btn" data-prop="false">False</button>
                                     <button class="btn active" data-prop="default">Default</button>
