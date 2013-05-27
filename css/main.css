@@ -119,6 +119,14 @@ a:-webkit-any-link {
     max-width: 500px;
 }
 
+.form-horizontal .control-label {
+    width: 230px;
+}
+
+.form-horizontal .controls {
+    margin-left: 250px;
+}
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
