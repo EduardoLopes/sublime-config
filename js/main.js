@@ -159,3 +159,7 @@ $(document).on('click', '.ruler', function(event){
     c.removeArrayOptions(data.name, value);
     addToTextArea();
 });
+
+$("i[rel='tooltip']").popover({trigger: 'hover'});
+
+

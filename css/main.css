@@ -115,9 +115,9 @@ a:-webkit-any-link {
     margin-bottom: 5px;
 }
 
-
-
-
+.popover {
+    max-width: 500px;
+}
 
 
 
