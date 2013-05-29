@@ -161,5 +161,3 @@ $(document).on('click', '.ruler', function(event){
 });
 
 $("i[rel='tooltip']").popover({trigger: 'hover'});
-
-
