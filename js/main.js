@@ -106,13 +106,13 @@ $('button.default').on('click', function(){
 $('.btn-group').on('click', function(event){
     event.preventDefault();
     var data = $(this).data();
-    var value = $(event.toElement).data();
+    var value = $(event.target).data();
     
     if($(this).children('.btn').hasClass('active')){
         $(this).children('.btn').removeClass('active');
-        $(event.toElement).addClass('active');
+        $(event.target).addClass('active');
     } else {
-        $(event.toElement).addClass('active');
+        $(event.target).addClass('active');
     }
 
     if(value.prop == "default"){
@@ -127,7 +127,7 @@ $('.btn-group').on('click', function(event){
 $('.addRule').on('click', function(event){
     event.preventDefault();
     
-    var data = $(event.toElement).data();
+    var data = $(event.target).data();
     var value = $('#rulers').val();
     
     var textWidthBth = "<div class='text-with-btn'>" + value + "</div>";
