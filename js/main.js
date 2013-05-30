@@ -70,9 +70,11 @@ $( "input[type='checkbox']" ).change(function(){
     addToTextArea();
 });
 
-$( " input[type='number'].onChange " ).change(function(){
+$( " input[type='number'].onChange " ).on('keyup change',function(){
     var data = $(this).data();
     var value = this.value;
+
+
     if(data.name == "scroll_speed") value = parseFloat(value).toFixed(1);
 
     if(value == "" || value == "NaN")
