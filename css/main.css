@@ -126,7 +126,7 @@ header{
     text-align: center;
     color: #ededed;
     padding: 40px 0;
-    border-bottom: #83b83d 5px solid;
+    border-bottom: #83b83d 3px solid;
 }
 
 textarea:focus,
@@ -193,7 +193,7 @@ select:focus{
 
 footer {
     text-align: center;
-    border-top: #83b83d 5px solid;
+    border-top: #83b83d 3px solid;
     padding: 30px 0;
     margin-top: 25px;
     background-color: #181818;
