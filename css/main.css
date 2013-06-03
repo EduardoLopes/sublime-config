@@ -120,7 +120,7 @@ a:-webkit-any-link {
     margin-left: 260px;
 }
 
-footer a{
+header a, footer a{
     color: #83b83d;
     -webkit-transition: color linear .2s;
        -moz-transition: color linear .2s;
@@ -128,11 +128,11 @@ footer a{
             transition: color linear .2s;
 }
 
-footer a:hover{
+header a:hover, footer a:hover{
     color: #679130;
 }
 
-footer a:active{
+header a:active, footer a:active{
     color: #96c756;
 }
 
