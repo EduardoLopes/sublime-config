@@ -1,32 +1,32 @@
-function Config(){
+function Config() {
     this.config = {};
-    this.configArray =  [
-                    'font_options',
-                    'rulers',
-                    'indent_guide_options',
-                    'auto_complete_triggers',
-                    'folder_exclude_patterns',
-                    'file_exclude_patterns',
-                    'binary_file_patterns',
-                    'ignored_packages'
-                        ]
+    this.configArray = [
+            'font_options',
+            'rulers',
+            'indent_guide_options',
+            'auto_complete_triggers',
+            'folder_exclude_patterns',
+            'file_exclude_patterns',
+            'binary_file_patterns',
+            'ignored_packages'
+    ]
 }
 
 Config.prototype.setConfig = function(what, arg) {
     this.config[what] = arg;
 };
 
-Config.prototype.setArrayOptions = function(what, arg) { 
-    if(this.config[what] == undefined) {
-            this.config[what] = [];
+Config.prototype.setArrayOptions = function(what, arg) {
+    if (this.config[what] == undefined) {
+        this.config[what] = [];
     }
     this.config[what].push(arg);
 };
 
-Config.prototype.removeArrayOptions = function(what, arg) {    
+Config.prototype.removeArrayOptions = function(what, arg) {
     var index = this.config[what].indexOf(arg);
     this.config[what].splice(index, 1);
-    if(this.config[what].length == 0) {
+    if (this.config[what].length == 0) {
         delete this.config[what];
     }
 };
@@ -41,26 +41,26 @@ Config.prototype.removeConfig = function(what) {
 
 Config.prototype.getJson = function() {
     var json = JSON.stringify(c.getConfig(), null, '\t');
-    return json.replace(/\"(\d*.\d+|[\d+]|false|true)\"/g,"$1");
+    return json.replace(/\"(\d*.\d+|[\d+]|false|true)\"/g, "$1");
 };
 
 c = new Config();
 
-function addToTextArea(){
+function addToTextArea() {
     $(".result").text(c.getJson());
 }
 
-$( "input[type='checkbox']" ).change(function(){
+$("input[type='checkbox']").change(function() {
     var data = $(this).data();
     var value = this.value;
 
-    if(c.configArray.indexOf(data.name) > -1 && $(this).prop('checked') == true) {
+    if (c.configArray.indexOf(data.name) > -1 && $(this).prop('checked') == true) {
         c.setArrayOptions(data.name, value);
-    } else if (c.configArray.indexOf(data.name) > -1 && $(this).prop('checked') == false){
+    } else if (c.configArray.indexOf(data.name) > -1 && $(this).prop('checked') == false) {
         c.removeArrayOptions(data.name, value);
     } else {
 
-        if($(this).prop('checked') == true){
+        if ($(this).prop('checked') == true) {
             c.setConfig(data.name, value);
         } else {
             c.removeConfig(data.name);
@@ -70,14 +70,14 @@ $( "input[type='checkbox']" ).change(function(){
     addToTextArea();
 });
 
-$( " input[type='number'].onChange " ).on('keyup change',function(){
+$(" input[type='number'].onChange ").on('keyup change', function() {
     var data = $(this).data();
     var value = this.value;
 
 
-    if(data.name == "scroll_speed") value = parseFloat(value).toFixed(1);
+    if (data.name == "scroll_speed") value = parseFloat(value).toFixed(1);
 
-    if(value == "" || value == "NaN")
+    if (value == "" || value == "NaN")
         c.removeConfig(data.name);
     else
         c.setConfig(data.name, value);
@@ -85,19 +85,19 @@ $( " input[type='number'].onChange " ).on('keyup change',function(){
     addToTextArea();
 });
 
-$("select").change(function(){
+$("select").change(function() {
     var data = $(this).data();
     var value = $("option:selected", this).val();
-    if(value == 'default'){
+    if (value == 'default') {
         c.removeConfig(data.name);
     } else {
-        c.setConfig(data.name, value);    
+        c.setConfig(data.name, value);
     }
     addToTextArea();
 });
 
 
-$('button.default').on('click', function(){
+$('button.default').on('click', function() {
     var btn = $(this).prev();
     btn.val("");
     var data = btn.data();
@@ -105,61 +105,63 @@ $('button.default').on('click', function(){
     addToTextArea();
 });
 
-$('.btn-group').on('click', function(event){
+$('.btn-group').on('click', function(event) {
     event.preventDefault();
     var data = $(this).data();
     var value = $(event.target).data();
-    
-    if($(this).children('.btn').hasClass('active')){
+
+    if ($(this).children('.btn').hasClass('active')) {
         $(this).children('.btn').removeClass('active');
         $(event.target).addClass('active');
     } else {
         $(event.target).addClass('active');
     }
 
-    if(value.prop == "default"){
-        c.removeConfig(data.name);    
+    if (value.prop == "default") {
+        c.removeConfig(data.name);
     } else {
-        c.setConfig(data.name, value.prop);    
+        c.setConfig(data.name, value.prop);
     }
 
     addToTextArea();
 });
 
-$('.addRule').on('click', function(event){
+$('.addRule').on('click', function(event) {
     event.preventDefault();
-    
+
     var data = $(event.target).data();
     var value = $('#rulers').val();
-    
+
     var textWidthBth = "<div class='text-with-btn'>" + value + "</div>";
     var btn = "<button class='btn ruler' type='button' data-name='rulers' data-prop='" + value + "'><i class='icon-remove'></i></button>";
-    var html = "<div class='ruleContainer'> " + textWidthBth+btn + " <div>";
-            
-        if(value){
-            
-            if(c.getConfig()[data.name] != undefined && c.getConfig()[data.name].indexOf(value) != -1 || value == 0){
-                $('#rulers').addClass('invalid'); 
-            } else {
-                c.setArrayOptions(data.name, value);
-                $('.rulers .input-append .row').append(html);
-                $('#rulers, .text-with-btn').removeClass('invalid');    
-            }
+    var html = "<div class='ruleContainer'> " + textWidthBth + btn + " <div>";
 
-        } else {
+    if (value) {
+
+        if (c.getConfig()[data.name] != undefined && c.getConfig()[data.name].indexOf(value) != -1 || value == 0) {
             $('#rulers').addClass('invalid');
+        } else {
+            c.setArrayOptions(data.name, value);
+            $('.rulers .input-append .row').append(html);
+            $('#rulers, .text-with-btn').removeClass('invalid');
         }
 
-   addToTextArea();
+    } else {
+        $('#rulers').addClass('invalid');
+    }
+
+    addToTextArea();
 });
 
-$(document).on('click', '.ruler', function(event){
+$(document).on('click', '.ruler', function(event) {
     $(this).parent().remove();
     var data = $(this).data();
     var value = data.prop.toString();
-    
+
     c.removeArrayOptions(data.name, value);
     addToTextArea();
 });
 
-$("i[rel='tooltip']").popover({trigger: 'hover'});
+$("i[rel='tooltip']").popover({
+    trigger: 'hover'
+});
