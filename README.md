@@ -1,13 +1,4 @@
-Need to be add
-=========
+Usage
+=====
 
-word_separators
-fallback_encoding
-default_encoding
-auto_complete_selector
-auto_complete_triggers
-theme
-folder_exclude_patterns
-file_exclude_patterns
-binary_file_patterns
-ignored_packages
+Just copy the JSON in textarea at the bottom of the page and paste in `Preferences > Settings - User`.
