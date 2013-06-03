@@ -40,30 +40,30 @@ Config.prototype.removeConfig = function(what) {
 };
 
 Config.prototype.getJson = function() {
-    var json = JSON.stringify(c.getConfig(), null, '\t');
+    var json = JSON.stringify(this.getConfig(), null, '\t');
     return json.replace(/\"(\d*.\d+|[\d+]|false|true)\"/g, "$1");
 };
 
-c = new Config();
+settings = new Config();
 
 function addToTextArea() {
-    $(".result").text(c.getJson());
+    $(".result").text(settings.getJson());
 }
 
 $("input[type='checkbox']").change(function() {
     var data = $(this).data();
     var value = this.value;
 
-    if (c.configArray.indexOf(data.name) > -1 && $(this).prop('checked') == true) {
-        c.setArrayOptions(data.name, value);
-    } else if (c.configArray.indexOf(data.name) > -1 && $(this).prop('checked') == false) {
-        c.removeArrayOptions(data.name, value);
+    if (settings.configArray.indexOf(data.name) > -1 && $(this).prop('checked') == true) {
+        settings.setArrayOptions(data.name, value);
+    } else if (settings.configArray.indexOf(data.name) > -1 && $(this).prop('checked') == false) {
+        settings.removeArrayOptions(data.name, value);
     } else {
 
         if ($(this).prop('checked') == true) {
-            c.setConfig(data.name, value);
+            settings.setConfig(data.name, value);
         } else {
-            c.removeConfig(data.name);
+            settings.removeConfig(data.name);
         };
     }
 
@@ -78,9 +78,9 @@ $(" input[type='number'].onChange ").on('keyup change', function() {
     if (data.name == "scroll_speed") value = parseFloat(value).toFixed(1);
 
     if (value == "" || value == "NaN")
-        c.removeConfig(data.name);
+        settings.removeConfig(data.name);
     else
-        c.setConfig(data.name, value);
+        settings.setConfig(data.name, value);
 
     addToTextArea();
 });
@@ -89,9 +89,9 @@ $("select").change(function() {
     var data = $(this).data();
     var value = $("option:selected", this).val();
     if (value == 'default') {
-        c.removeConfig(data.name);
+        settings.removeConfig(data.name);
     } else {
-        c.setConfig(data.name, value);
+        settings.setConfig(data.name, value);
     }
     addToTextArea();
 });
@@ -101,7 +101,7 @@ $('button.default').on('click', function() {
     var btn = $(this).prev();
     btn.val("");
     var data = btn.data();
-    c.removeConfig(data.name);
+    settings.removeConfig(data.name);
     addToTextArea();
 });
 
@@ -118,9 +118,9 @@ $('.btn-group').on('click', function(event) {
     }
 
     if (value.prop == "default") {
-        c.removeConfig(data.name);
+        settings.removeConfig(data.name);
     } else {
-        c.setConfig(data.name, value.prop);
+        settings.setConfig(data.name, value.prop);
     }
 
     addToTextArea();
@@ -138,10 +138,10 @@ $('.addRule').on('click', function(event) {
 
     if (value) {
 
-        if (c.getConfig()[data.name] != undefined && c.getConfig()[data.name].indexOf(value) != -1 || value == 0) {
+        if (settings.getConfig()[data.name] != undefined && settings.getConfig()[data.name].indexOf(value) != -1 || value == 0) {
             $('#rulers').addClass('invalid');
         } else {
-            c.setArrayOptions(data.name, value);
+            settings.setArrayOptions(data.name, value);
             $('.rulers .input-append .row').append(html);
             $('#rulers, .text-with-btn').removeClass('invalid');
         }
@@ -158,7 +158,7 @@ $(document).on('click', '.ruler', function(event) {
     var data = $(this).data();
     var value = data.prop.toString();
 
-    c.removeArrayOptions(data.name, value);
+    settings.removeArrayOptions(data.name, value);
     addToTextArea();
 });
 
