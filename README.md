@@ -1,3 +1,5 @@
+http://eduardolopes.github.io/sublime-config/
+
 Usage
 =====
 
