@@ -16,12 +16,12 @@ body {
 }
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: #a0cc65;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: #a0cc65;
     text-shadow: none;
 }
 
@@ -120,6 +120,22 @@ a:-webkit-any-link {
     margin-left: 260px;
 }
 
+footer a{
+    color: #83b83d;
+    -webkit-transition: color linear .2s;
+       -moz-transition: color linear .2s;
+         -o-transition: color linear .2s;
+            transition: color linear .2s;
+}
+
+footer a:hover{
+    color: #679130;
+}
+
+footer a:active{
+    color: #96c756;
+}
+
 header{
     background: #181818;
     margin-bottom: 35px;
@@ -180,10 +196,10 @@ input[type="color"],
 }
 
 select{
-    -webkit-transition: border linear .2s,box-shadow linear .2s;
-       -moz-transition: border linear .2s,box-shadow linear .2s;
-         -o-transition: border linear .2s,box-shadow linear .2s;
-            transition: border linear .2s,box-shadow linear .2s;
+    -webkit-transition: border linear .1s;
+       -moz-transition: border linear .1s;
+         -o-transition: border linear .1s;
+            transition: border linear .1s;
 }
 
 select:focus{

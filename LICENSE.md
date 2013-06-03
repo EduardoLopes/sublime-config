@@ -1,4 +1,4 @@
-Copyright (c) 2012, Eduardo Lopes
+Copyright (c) 2013, Eduardo Lopes
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
