@@ -1,9 +1,23 @@
-<div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
+<div class="row">
+  <div class="span12">
+    <form class="form-horizontal">
+      <buttons-Radio name="Line Numbers"
+                     key="line_numbers"
+                     buttons="false, true, default"
+                     tooltip="Set to false to hide numbers in the gutter."
+                     link="http://www.sublimetext.com/docs/2/spell_checking.html">
+      </buttons-Radio>
+
+      <buttons-Radio name="Word Wrap"
+                     key="word_wrap"
+                     buttons="false, true, auto, default">
+      </buttons-Radio>
+    </form>
+  </div>
+
+  <div class="row">
+    <div class="span12">
+      <textarea ng-model="configJson" class="result" readonly>{}</textarea>
+    </div>
+  </div>
 </div>
