@@ -1,6 +1,7 @@
 <div class="row">
   <div class="span12">
     <form class="form-horizontal">
+
       <buttons-Radio name="Line Numbers"
                      key="line_numbers"
                      buttons="false, true, default"
@@ -12,6 +13,15 @@
                      key="word_wrap"
                      buttons="false, true, auto, default">
       </buttons-Radio>
+
+      <super-input name="Font Size"
+                   key="font_size"
+                   a-type="number"
+                   a-min="1"
+                   a-max="50"
+                   a-step="0.1">
+      </super-input>
+
     </form>
   </div>
 

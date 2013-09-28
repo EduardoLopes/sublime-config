@@ -1,21 +1,34 @@
 'use strict';
 
 angular.module('sublConfigApp')
-  .directive('buttonsRadio', function () {
+  .directive('superInput', [function () {
     return {
-      templateUrl: 'views/buttonsRadio.html',
+      templateUrl: 'views/superInput.html',
       restrict: 'E',
       replace: true,
       scope: true,
       controller: ['$rootScope', '$scope', '$element', '$attrs', function ($rootScope, scope, element, attrs) {
         scope.name = attrs.name;
         scope.key = attrs.key;
-        scope.buttons = [];
+        scope.type = attrs.type;
 
-        var buttons = attrs.buttons.split(',');
-        buttons.forEach(function(element, index, array){
-          scope.buttons.push(element.trim());
-        });
+        var attr = (function() {
+          var attribute = {
+            id: attrs.key
+          };
+
+          for (var prop in attrs.$attr) {
+
+            if(/a-\w*/g.exec(attrs.$attr[prop])){
+              attribute[attrs.$attr[prop].replace('a-', '')] = attrs[prop];
+            }
+
+          };
+
+          return attribute;
+        }());
+
+        $(element.find("input")).attr(attr);
 
         if (attrs.link !== undefined ) {
           element.find('label').append(' <a href=" ' + attrs.link + ' " title=" ' + attrs.link + ' " target="_blank"><i class="icon-globe"></i></a>' );
@@ -31,4 +44,4 @@ angular.module('sublConfigApp')
 
       }]
     };
-  });
+  }]);
