@@ -31,11 +31,11 @@ angular.module('sublConfigApp')
         $(element.find("input")).attr(attr);
 
         if (attrs.link !== undefined ) {
-          element.find('label').append(' <a href=" ' + attrs.link + ' " title=" ' + attrs.link + ' " target="_blank"><i class="icon-globe"></i></a>' );
+          element.find('label').append('<a href=" ' + attrs.link + ' " title=" ' + attrs.link + ' " target="_blank"><i class="icon-globe"></i></a>' );
         };
 
         if (attrs.tooltip !== undefined ) {
-          element.find('label').append(' <i class="icon-info-sign" rel="tooltip"></i>' );
+          element.find('label').append('<i class="icon-info-sign" rel="tooltip"></i>' );
           $(element.find("i[rel='tooltip']")).popover({
             trigger: 'hover',
             content: attrs.tooltip

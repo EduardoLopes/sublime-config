@@ -1,26 +1,155 @@
 <div class="row">
   <div class="span12">
     <form class="form-horizontal">
-
-      <buttons-Radio name="Line Numbers"
-                     key="line_numbers"
-                     buttons="false, true, default"
-                     tooltip="Set to false to hide numbers in the gutter."
-                     link="http://www.sublimetext.com/docs/2/spell_checking.html">
-      </buttons-Radio>
-
-      <buttons-Radio name="Word Wrap"
-                     key="word_wrap"
-                     buttons="false, true, auto, default">
-      </buttons-Radio>
+      <div class="control-group">
+        <label class="control-label" for="color_scheme">Color Scheme <i class="icon-info-sign" rel="tooltip" data-content="Sets the colors used within the text area. It's better change this option in Preferences > Color Scheme to see live what you want."></i></label>
+        <div class="controls">
+          <select data-name="color_scheme" ng-model="color_scheme" ng-change="setConfig('color_scheme', color_scheme)" id="color_scheme">
+            <option value="default"> Default </option>
+            <option value="Packages/Color Scheme - Default/All Hallow's Eve.tmTheme"> All Hallow's Eve </option>
+            <option value="Packages/Color Scheme - Default/Amy.tmTheme"> Amy </option>
+            <option value="Packages/Color Scheme - Default/Blackboard.tmTheme"> Blackboard </option>
+            <option value="Packages/Color Scheme - Default/Cobalt.tmTheme"> Cobalt </option>
+            <option value="Packages/Color Scheme - Default/Dawn.tmTheme"> Dawn </option>
+            <option value="Packages/Color Scheme - Default/Eiffel.tmTheme"> Eiffel </option>
+            <option value="Packages/Color Scheme - Default/Espresso Libre.tmTheme"> Espresso Libre </option>
+            <option value="Packages/Color Scheme - Default/IDLE.tmTheme"> IDLE </option>
+            <option value="Packages/Color Scheme - Default/LAZY.tmTheme"> LAZY </option>
+            <option value="Packages/Color Scheme - Default/Mac Classic.tmTheme"> Mac Classic </option>
+            <option value="Packages/Color Scheme - Default/MagicWB (Amiga).tmTheme"> MagicWB (Amiga) </option>
+            <option value="Packages/Color Scheme - Default/Monokai Bright.tmTheme"> Monokai Bright </option>
+            <option value="Packages/Color Scheme - Default/Monokai.tmTheme"> Monokai </option>
+            <option value="Packages/Color Scheme - Default/Pastels on Dark.tmTheme"> Pastels on Dark </option>
+            <option value="Packages/Color Scheme - Default/Slush & Poppies.tmTheme"> Slush & Poppies </option>
+            <option value="Packages/Color Scheme - Default/Solarized (Dark).tmTheme"> Solarized (Dark) </option>
+            <option value="Packages/Color Scheme - Default/Solarized (Light).tmThem"> Solarized (Light) </option>
+            <option value="Packages/Color Scheme - Default/SpaceCadet.tmTheme"> SpaceCadet </option>
+            <option value="Packages/Color Scheme - Default/Sunburst.tmTheme"> Sunburst </option>
+            <option value="Packages/Color Scheme - Default/Twilight.tmTheme"> Twilight </option>
+            <option value="Packages/Color Scheme - Default/Zenburnesque.tmTheme"> Zenburnesque </option>
+            <option value="Packages/Color Scheme - Default/iPlastic.tmTheme"> iPlastic </option>
+          </select>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="font_face">Font Face <a href="http://www.sublimetext.com/docs/2/font.html" title="http://www.sublimetext.com/docs/2/font.html" target="_blank"><i class="icon-globe"></i></a><i class="icon-info-sign" rel="tooltip" data-content="Sets font face to be used within the text area."></i></label>
+        <div class="controls">
+          <select data-name="font_face" id="font_face" ng-model="font_face" ng-change="setConfig('font_face', font_face)">
+            <option value="default">Default</option>
+            <option value="Monospace">Monospace</option>
+            <option value="Ubuntu Mono">Ubuntu Mono</option>
+          </select>
+        </div>
+      </div>
 
       <super-input name="Font Size"
                    key="font_size"
                    a-type="number"
                    a-min="1"
                    a-max="50"
-                   a-step="0.1">
+                   a-step="0.1"
+                   tooltip="Sets size of the font for text area."
+                   link="http://www.sublimetext.com/docs/2/font.html">
       </super-input>
+
+      <div class="control-group">
+        <label class="control-label" for="font_options">Font Options</label>
+        <div class="controls">
+          <div id="row">
+            <div class="span2">
+              <label for="bold">
+                <input id="bold" type="checkbox" ng-true-value="bold" ng-false-value="remove_this" ng-model="bold" ng-click="setArrayOptions('font_options', bold)" /> Bold
+              </label>
+              <label for="italic">
+                <input id="italic" type="checkbox" ng-true-value="italic" ng-false-value="remove_this" ng-model="italic" ng-click="setArrayOptions('font_options', italic)" /> Italic
+              </label>
+              <label for="gray_antialias">
+                <input id="gray_antialias" type="checkbox" ng-true-value="gray_antialias" ng-false-value="remove_this" ng-model="gray_antialias" ng-click="setArrayOptions('font_options', gray_antialias)" /> Gray Antialias
+              </label>
+            </div>
+            <div class="span2">
+              <label for="no_bold">
+                <input id="no_bold" type="checkbox" ng-true-value="no_bold" ng-false-value="remove_this" ng-model="no_bold" ng-click="setArrayOptions('font_options', no_bold)" /> No Bold
+              </label>
+              <label for="no_italic">
+                <input id="no_italic" type="checkbox" ng-true-value="no_italic" ng-false-value="remove_this" ng-model="no_italic" ng-click="setArrayOptions('font_options', no_italic)" /> No Italic
+              </label>
+              <label for="no_antialias">
+                <input id="no_antialias" type="checkbox" ng-true-value="no_antialias" ng-false-value="remove_this" ng-model="no_antialias" ng-click="setArrayOptions('font_options', no_antialias)" /> No Antialias
+              </label>
+            </div>
+             <div class="span3">
+              <label for="subpixel_antialias">
+                <input id="subpixel_antialias" type="checkbox" ng-true-value="subpixel_antialias" ng-false-value="remove_this" ng-model="subpixel_antialias" ng-click="setArrayOptions('font_options', subpixel_antialias)" /> Subpixel Antialias
+              </label>
+              <label for="no_round">
+                <input id="no_round" type="checkbox" ng-true-value="no_round" ng-false-value="remove_this" ng-model="no_round" ng-click="setArrayOptions('font_options', no_round)" /> No Round (OS X only)
+              </label>
+              <label for="directwrite">
+                <input id="directwrite" type="checkbox" ng-true-value="directwrite" ng-false-value="remove_this" ng-model="directwrite" ng-click="setArrayOptions('font_options', directwrite)" /> Directwrite (Windows only)
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <buttons-radio name="Line Numbers"
+                     key="line_numbers"
+                     buttons="false, true, default"
+                     tooltip="Set to false to hide numbers in the gutter.">
+      </buttons-radio>
+
+      <buttons-radio name="Gutter"
+                     key="gutter"
+                     buttons="false, true, default"
+                     tooltip="Set to false to hide the gutter altogether.">
+      </buttons-radio>
+
+      <super-input name="Margin"
+                   key="margin"
+                   a-type="number"
+                   a-min="0"
+                   a-max="50"
+                   a-step="1"
+                   tooltip="Spacing between the gutter and the text.">
+      </super-input>
+
+      <buttons-radio name="Fold Buttons"
+                     key="fold_buttons"
+                     buttons="false, true, default"
+                     tooltip="Fold buttons are the triangles shown in the gutter to fold regions of text.">
+      </buttons-radio>
+
+      <buttons-radio name="Fade Fold Buttons"
+                     key="fade_fold_buttons"
+                     buttons="false, true, default"
+                     tooltip="Hides the fold buttons unless the mouse is over the gutter.">
+      </buttons-radio>
+
+      <div class="control-group">
+        <label class="control-label" for="rulers">Rulers <i class="icon-info-sign" rel="tooltip" data-content="Columns in which to display vertical rulers."></i></label>
+        <div class="controls">
+          <div class="input-append">
+            <input id="rulers" class="span2" type="number" min="1" max="999" step="1" ng-model="rulers">
+            <button class="btn addRule" type="button" ng-click="setArrayOptions('rulers', rulers)">Add</button>
+          </div>
+          <div ng-hide="!config.rulers" class="rulers">
+            <div class="input-append">
+              <div class="row">
+                 <div class='ruleContainer' ng-repeat="ruler in config.rulers">
+                <div class='text-with-btn'>{{ruler}}</div>
+                <button class='btn ruler' type='button'  ng-click="removeArrayOptions('rulers', ruler)"><i class='icon-remove'></i></button>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <buttons-radio name="Word Wrap"
+                     key="word_wrap"
+                     buttons="false, true, auto, default">
+      </buttons-radio>
 
     </form>
   </div>

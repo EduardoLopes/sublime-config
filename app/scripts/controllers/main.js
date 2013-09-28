@@ -29,14 +29,22 @@ angular.module('sublConfigApp')
       };
 
       $rootScope.setArrayOptions = function(what, arg) {
-        if ($rootScope.config[what] == undefined) {
+
+        if(what in $rootScope.config){
+          var index = $rootScope.config[what].indexOf(arg);
+        };
+
+        if (!(what in $rootScope.config) && arg) {
             $rootScope.config[what] = [];
         }
 
         //add this to the checkbox: ng-false-value="remove_this"
         if (arg == "remove_this"){
           $rootScope.removeArrayOptions(what, arg);
+        } else if(index > -1 || !arg){
+          $('#rulers').addClass('invalid');
         } else {
+          $('#rulers').removeClass('invalid');
           $rootScope.config[what].push(arg);
         }
 
@@ -51,6 +59,8 @@ angular.module('sublConfigApp')
         if ($rootScope.config[what].length == 0) {
             delete $rootScope.config[what];
         }
+
+        $rootScope.$broadcast('setConfig');
       };
 
       $scope.$on('setConfig', function () {
