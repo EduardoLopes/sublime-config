@@ -33,7 +33,12 @@ angular.module('sublConfigApp')
             $rootScope.config[what] = [];
         }
 
-        $rootScope.config[what].push(arg);
+        //add this to the checkbox: ng-false-value="remove_this"
+        if (arg == "remove_this"){
+          $rootScope.removeArrayOptions(what, arg);
+        } else {
+          $rootScope.config[what].push(arg);
+        }
 
         $rootScope.$broadcast('setConfig');
       };
