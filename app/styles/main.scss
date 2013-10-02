@@ -28,8 +28,10 @@ a:-webkit-any-link {
 
 }
 
+.input-append .invalid:focus,
 .input-append .invalid{
     border-color: #e9322d;
+    box-shadow: 0 0 6px #f8b9b7;
 }
 
 .text-with-btn {

@@ -20,6 +20,21 @@ angular.module('sublConfigApp')
         });
       };
 
+      $scope.rulerValidation = function(arg) {
+        var index;
+
+        if('rulers' in $rootScope.config){
+          index = $rootScope.config['rulers'].indexOf(arg);
+        };
+
+        if( index > -1 ){
+          $('#rulers').addClass('invalid');
+        } else {
+          $('#rulers').removeClass('invalid');
+        }
+
+      };
+
       $rootScope.setConfig = function(what, arg) {
         if(arg == 'default'){
           $rootScope.removeConfig(what);
@@ -35,9 +50,9 @@ angular.module('sublConfigApp')
       };
 
       $rootScope.setArrayOptions = function(what, arg) {
-
+        var index;
         if(what in $rootScope.config){
-          var index = $rootScope.config[what].indexOf(arg);
+          index = $rootScope.config[what].indexOf(arg);
         };
 
         if (!(what in $rootScope.config) && arg) {
@@ -51,6 +66,7 @@ angular.module('sublConfigApp')
           $('#rulers').addClass('invalid');
         } else {
           $('#rulers').removeClass('invalid');
+          $scope.rulers = '';
           $rootScope.config[what].push(arg);
         }
 

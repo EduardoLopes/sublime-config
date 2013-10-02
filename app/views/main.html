@@ -130,15 +130,15 @@
         <label class="control-label" for="rulers">Rulers <i class="icon-info-sign" rel="tooltip" data-content="Columns in which to display vertical rulers."></i></label>
         <div class="controls">
           <div class="input-append">
-            <input id="rulers" class="span2" type="number" min="1" max="999" step="1" ng-model="rulers">
-            <button class="btn addRule" type="button" ng-click="setArrayOptions('rulers', rulers); rulers = ''; ">Add</button>
+            <input ng-change="rulerValidation(rulers)" ng-required="rulers" id="rulers" class="span2" type="number" min="1" max="999" step="1" ng-model="rulers">
+            <button class="btn addRule" type="button" ng-click="setArrayOptions('rulers', rulers);">Add</button>
           </div>
           <div ng-hide="!config.rulers" class="rulers">
             <div class="input-append">
               <div class="row">
                  <div class='ruleContainer' ng-repeat="ruler in config.rulers">
                 <div class='text-with-btn'>{{ruler}}</div>
-                <button class='btn ruler' type='button'  ng-click="removeArrayOptions('rulers', ruler)"><i class='icon-remove'></i></button>
+                <button class='btn ruler' type='button'  ng-click="removeArrayOptions('rulers', ruler); rulerValidation(rulers);"><i class='icon-remove'></i></button>
               </div>
               </div>
             </div>
