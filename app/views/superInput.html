@@ -3,7 +3,7 @@
   <div class="controls">
     <div class="input-append">
       <input class="span2" ng-model="input" ng-change="setConfig(key, input)">
-        <button class="btn" ng-click="setConfig(key, 'default')">Default</button>
+      <button class="btn" ng-click="setConfig(key, 'default'); input = '';">Default</button>
     </div>
   </div>
 </div>

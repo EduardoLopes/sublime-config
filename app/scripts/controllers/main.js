@@ -14,6 +14,12 @@ angular.module('sublConfigApp')
         'ignored_packages'
       ];
 
+      $scope.tooltipInit = function() {
+        $("i[rel='tooltip']").popover({
+          trigger: 'hover'
+        });
+      };
+
       $rootScope.setConfig = function(what, arg) {
         if(arg == 'default'){
           $rootScope.removeConfig(what);
