@@ -108,6 +108,7 @@ input[type="color"],
     &:focus {
     border-color: #83b83d;
     @include box-shadow(none);
+    outline: none;
   }
 }
 
