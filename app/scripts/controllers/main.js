@@ -4,16 +4,6 @@ angular.module('sublConfigApp')
   .controller('MainCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
 
     $rootScope.config = {};
-    $rootScope.configArray = [
-      'font_options',
-      'rulers',
-      'indent_guide_options',
-      'auto_complete_triggers',
-      'folder_exclude_patterns',
-      'file_exclude_patterns',
-      'binary_file_patterns',
-      'ignored_packages'
-    ];
 
     $scope.tooltipInit = function() {
       $('i[rel="tooltip"]').popover({
