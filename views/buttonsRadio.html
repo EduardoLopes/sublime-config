@@ -1,0 +1,9 @@
+<div class="control-group">
+  <label class="control-label" for="{{key}}"> {{name}}
+  </label>
+  <div class="controls">
+    <div class="btn-group" data-name="{{key}}" data-toggle="buttons-radio">
+      <button ng-class="{active : button == 'default'}" ng-click="setConfig(key, button)" ng-repeat="button in buttons" class="btn" data-prop="{{button}}">{{button | firstLetterUpperCase}}</button>
+    </div>
+  </div>
+</div>
