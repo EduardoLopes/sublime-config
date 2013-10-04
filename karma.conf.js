@@ -7,13 +7,22 @@ basePath = 'app/';
 files = [
   JASMINE,
   JASMINE_ADAPTER,
+  'vendor/jquery/jquery.min.js',
+  'vendor/bootstrap-sass/js/bootstrap-tooltip.js',
+  'vendor/bootstrap-sass/js/bootstrap-button.js',
+  'vendor/bootstrap-sass/js/bootstrap-popover.js',
   'vendor/angular/angular.js',
   'vendor/angular-mocks/angular-mocks.js',
   'scripts/*.js',
   'scripts/**/*.js',
   '../test/mock/**/*.js',
-  '../test/spec/**/*.js'
+  '../test/spec/**/*.js',
+  'views/**/*.html'
 ];
+
+preprocessors = {
+  'views/**/*.html': 'html2js'
+};
 
 // list of files to exclude
 exclude = [];
